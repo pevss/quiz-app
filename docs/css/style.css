@@ -1,0 +1,459 @@
+:root{
+    --erro: #C53314;
+    --acerto: #5DA118;
+    --fundo: #1D1A1A;
+    --branco: #D4CBCB;
+    --poderes-degrade-borda: linear-gradient(180deg, #3B3838, #3b383846);
+    --poderes-degrade-fundo: linear-gradient(180deg, #2B2828, #222020);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: var(--fundo);
+    color: var(--branco);
+    list-style: none;
+    font-family: inter;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 40px;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.instrucoes{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+
+    z-index: 4;
+
+    max-width: fit-content;
+
+    background: radial-gradient(#272525, #1F1D1D);
+    border: #282525 solid 2.5px;
+    box-shadow: inset #1B1818 0px 0px 0px 2.5px;
+    border-radius: 10px;
+    padding: 20px;
+    isolation: isolate;
+}
+
+.instrucoes::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(../midias/grain.jpg);
+    background-color: #272525;
+    background-blend-mode: overlay;
+    opacity: 20%;
+}
+
+.overlay-instrucoes{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.fechar-modal{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.capa{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fundo);
+}
+
+.capa h1{
+    font-weight: 500;
+    font-size: 20px;
+    border: 2px solid transparent;
+    background: var(--poderes-degrade-fundo) padding-box,
+    var(--poderes-degrade-borda) border-box;
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    box-shadow: #1f1d1d86 0px 3px 5px;
+    height: 68px;
+}
+
+.capa h1:hover{
+    opacity: 40%;
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.interacao-capa{
+    display: flex;
+    gap: 10px;
+}
+
+.interacao-capa i{
+    cursor: pointer;
+}
+
+main{
+    width: 1140px;
+    margin: 0px auto 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background: radial-gradient(#272525, #1F1D1D);
+    border: #282525 solid 2.5px;
+    box-shadow: inset #1B1818 0px 0px 0px 2.5px;
+    border-radius: 10px;
+    padding: 35px;
+    position: relative;
+    isolation: isolate;
+}
+
+main::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(../midias/grain.jpg);
+    background-color: #272525;
+    background-blend-mode: overlay;
+    opacity: 20%;
+}
+
+.grain{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 30%;
+    border-radius: 10px;
+    mix-blend-mode: overlay;
+}
+
+.grain img{
+    height: 100%;
+    width: 100%;
+}
+
+.contador{
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    line-height: 2;
+    border-radius: 100px;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 28px;
+
+    text-align: center;
+    background: radial-gradient(#272525, #1F1D1D);
+    border: #282525 solid 2.5px;
+    box-shadow: inset #1B1818 0px 0px 0px 2.5px;
+    isolation: isolate;
+}
+
+.contador::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(../midias/grain.jpg);
+    background-color: #272525;
+    background-blend-mode: overlay;
+    opacity: 20%;
+}
+
+.linha{
+    height: 2px;
+    width: 100%;
+    background-color: #282525;
+    box-shadow: #1616163a 0px 1px 2px;
+}
+
+#imagem{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 300px;
+    background-image: url(/docs/midias/default.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+#alternativas{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.alternativa{
+    font-weight: 400;
+    font-size: 24px;
+    border: 2px solid transparent;
+    background-color: #1D1A1A;
+    border: #2F2D2D solid 2px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: relative;
+    transition: .2s ease-in-out;
+    box-shadow: #1f1d1d86 0px 3px 5px;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.alternativa span{
+    font-weight: 800;
+}
+
+#alternativas:has(.aparecido:hover) .alternativa:not(:hover){
+    opacity: 40%;
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.aparecido{
+    cursor: pointer;
+}
+
+.excluir{
+    position: absolute;
+    background-color: var(--erro);
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    top: -15px;
+    right: -15px;
+}
+
+.excluir path{
+    transform: translateY(-1px);
+}
+
+.escondido{
+    display: none;
+}
+
+.excluido{
+    opacity: 0;
+}
+
+#poderes{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#pular{
+    display: flex;
+    gap: 10px;
+}
+
+.plateia, .ligar, .eliminar, .pular-botao{
+    font-weight: 500;
+    font-size: 20px;
+    border: 2px solid transparent;
+    background: var(--poderes-degrade-fundo) padding-box,
+    var(--poderes-degrade-borda) border-box;
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    box-shadow: #1f1d1d86 0px 3px 5px;
+    height: 68px;
+}
+
+.pular-botao{
+    width: 68px;
+}
+
+.pular-botao svg{
+    transform: translateY(-4px) translateX(-18px);
+    stroke: #D4CBCB;
+}
+
+#pulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pulo{
+    width: 15px;
+    height: 15px;
+    background-color: var(--acerto);
+    border-radius: 100px;
+    box-shadow: var(--acerto) 0px 0px 6px;
+}
+
+.pulado{
+    background-color: #090E05;
+    box-shadow: none;
+}
+
+.usado{
+    background: radial-gradient(#222020, #1A1818) padding-box,
+    linear-gradient(#3C3838, #3c383841) border-box;
+    color: #322d2d;
+    stroke: #322d2d;
+    box-shadow: none;
+    cursor: default;
+}
+
+
+/* Placar */
+
+.placar{
+    padding: 30px 100px;
+    max-width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    background: radial-gradient(#272525, #1F1D1D);
+    border: #282525 solid 2.5px;
+    box-shadow: inset #1B1818 0px 0px 0px 2.5px;
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    isolation: isolate;
+    z-index: -1;
+    transform: translateY(5px);
+}
+
+.placar::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url(../midias/grain.jpg);
+    background-color: #272525;
+    background-blend-mode: overlay;
+    opacity: 20%;
+}
+
+#placar--corpo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-weight: 800;
+}
+
+.player h2{
+    font-size: 20px;
+    font-weight: 400;
+    transform: skewX(-5deg);
+}
+
+.player div{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+
+/* Prox pergunta */
+
+.prox-pergunta{
+    text-decoration: underline;
+    font-weight: 400;
+    cursor:pointer;
+}
+
+.bloqueado{
+    opacity: 10%;
+    cursor: default;
+    text-decoration: none;
+}
+
+
+/* Animações */
+
+@keyframes alternativa-aparecendo{
+    from{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes alternativa-sumindo {
+    from{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+}
+
+@keyframes pergunta-aparecendo{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes pergunta-sumindo{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
