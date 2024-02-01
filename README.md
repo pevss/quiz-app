@@ -35,6 +35,8 @@ Os poderes foram a parte mais legal de se pensar, tirando "Perguntar a plateia" 
 
 Foi nesse projeto que eu aprendi a lidar com bibliotecas externas e efeitos sonoros (baixados do site myinstants.com), aqui usei "js-confetti" para adicionar confetis quando o jogador acerta uma pergunta. 
 
+Além disso, toda a interface foi criada por mim! Prototipei tudo no figma para saber o layout para eu não começar o projeto as cegas diretamente no HTML.
+
 Conclusão
 ---
 
