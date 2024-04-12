@@ -68,10 +68,10 @@ const criarPerguntas = function(str){
 
         arr.push({
             pergunta,
-            alternativa0,
-            alternativa1,
-            alternativa2,
-            alternativa3,
+            alternativa0: `<span>A.</span> ${alternativa0}`,
+            alternativa1: `<span>B.</span> ${alternativa1}`,
+            alternativa2: `<span>C.</span> ${alternativa2}`,
+            alternativa3: `<span>D.</span> ${alternativa3}`,
             resposta: +resposta,
             imagem,
         });
