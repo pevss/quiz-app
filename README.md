@@ -1,7 +1,8 @@
 Quem quer ser um bêbado
 ===
 
-Eu e meus amigos estavam tendo ideias de maneiras diferentes de fazer o outro beber até que chegamos a esse jogo. 
+Eu e meus amigos estavam tendo ideias de maneiras diferentes de fazer o outro beber até que chegamos a esse jogo.
+Link do jogo: https://pevss.github.io/quiz-app/
 
 Conceito do jogo
 ---
@@ -16,6 +17,8 @@ Requisitos
 ---
 
 - Criar suspense na hora de aparecer as perguntas.
+
+- Deixar a experiência visualmente bem divertida para todos os involvidos.
   
 - Contador de shots par ambos os jogadores.
 
@@ -30,6 +33,10 @@ O processo de desenvolvimento foi bem divertido, criar a lógica de acertos e er
 
 Os poderes foram a parte mais legal de se pensar, tirando "Perguntar a plateia" e "Ligar para alguém" que não tem nenhum efeito no sistema, descobrir como remover duas alternativas e em seguida fazer com que os elementos do DOM delas aparecessem de novo foi bem interessante. Outra legal foi fazer com que o poder de pular a pergunta não interferisse do contador nem na proxima pergunta. Para fazer com que isso funcionasse corretamente, decidi fazer com que o sistema girasse em torno de dois arrays ("perguntas" e "perguntasReserva"), e então ele alternaria entre os dois conforme o jogador fosse pulando perguntas.
 
+Foi nesse projeto que eu aprendi a lidar com bibliotecas externas e efeitos sonoros (baixados do site myinstants.com), aqui usei "js-confetti" para adicionar confetis quando o jogador acerta uma pergunta. 
+
+Além disso, toda a interface foi criada por mim! Prototipei tudo no figma para saber o layout para eu não começar o projeto as cegas diretamente no HTML.
+
 Conclusão
 ---
 
@@ -38,4 +45,4 @@ O jogo foi um sucesso, rimos, o jogador bebeu 17 shots e capotou logo em seguida
 Agora falando de aspectos mais técnicos, desenvolver esse jogo foi bastante desafiador, existem muitos estados possíveis para o jogo, muitas interações estranhas que aconteciam com as animações do css, o timing do aparecimento das alternativas e perguntas demorou para ser refinado, etc. Mas acima de tudo, eu persisti, li diversos fóruns e consegui um resultado satisfatório em todos os aspectos. Para mim esse código está a prova de balas e roda até se eu apagar ele todo.
 
   Observações: O jogo foi criado para ser jogado em uma televisão, por isso a falta de responsividade (se o jogo chamar atenção de mais pessoas prentendo fazer a interface dele ser responsiva).
-  Caro recrutador, as perguntas não foram feitas por mim, qualquer coisa estranha que você ver não reflete a minha personalidade kkkkkkkk.
+  Caro recrutador, as perguntas não foram feitas por mim e também não fui eu que escolhi os efeitos sonoros, qualquer coisa estranha que você ver ou ouvir não reflete a minha personalidade kkkkkkkk.
