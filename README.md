@@ -77,3 +77,4 @@ alternativa,
 resposta
 
   Observações: As alternativas são base 0, ou seja, a resposta também tem que ser com base 0: Se a primeira alternativa for a resposta, resposta = 0.
+  As imagens são links: Botão direito na imagem do google -> copiar endereço da imagem.
