@@ -1,6 +1,6 @@
 "use strict";
 
-export const perguntas = [
+export const perguntasObj = [
     {
         pergunta: "Qual o nome desse personagem?",
         alternativa0: "<span>A.</span> Fred Flinstone",
@@ -183,7 +183,7 @@ export const perguntas = [
     },
 ];
 
-export const perguntasReservas = [
+export const perguntasReservasObj = [
     {
         pergunta: "Calcule o valor do cateto b no triângulo a seguir:",
         alternativa0: "<span>A.</span> 6",

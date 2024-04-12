@@ -1,6 +1,8 @@
 "use strict";
 
-import { perguntas, perguntasReservas } from "./perguntas.js";
+import { perguntasObj, perguntasReservasObj } from "./perguntas.js";
+
+let perguntas, perguntasReservas;
 
 //Elementos
 
@@ -32,6 +34,8 @@ const btnComecarJogo = document.querySelector(".capa h1");
 const btnAbrirInstrucoes = document.querySelector(".abrir-modal");
 const btnFecharInstrucoes = document.querySelector(".fechar-modal");
 
+const inputPerguntasPersonalizadas = document.querySelector(".perguntas-personalizadas");
+
 const poderesBase = [btnEliminar, btnLigar, btnPlateia];
 
 // Decorações
@@ -52,6 +56,32 @@ const bora = new Audio("midias/bora.mp3");
 let pulos, perguntaAtual, alternativasEliminadas, excluindo, perguntaReserva, placarHost, placarJogador, avancar, jogando;
 
 //Funções gerais do código
+
+const criarPerguntas = function(str){
+    const perguntas = [];
+    const perguntasReserva = [];
+
+    const [perguntasArr, perguntasReservaArr] = str.split("/");
+
+    const formarObjeto = function(perguntaStr, arr){
+        const [pergunta, alternativa0, alternativa1, alternativa2, alternativa3, resposta, imagem] = perguntaStr.split(",");
+
+        arr.push({
+            pergunta,
+            alternativa0,
+            alternativa1,
+            alternativa2,
+            alternativa3,
+            resposta,
+            imagem,
+        });
+    };
+    
+    perguntasArr.split(";").forEach(pergunta => formarObjeto(pergunta, perguntas));
+    perguntasReservaArr.split(";").forEach(pergunta => formarObjeto(pergunta, perguntasReserva));
+
+    return [perguntas, perguntasReserva];
+};
 
 const init = function(){
     excluindo = false;
@@ -203,6 +233,10 @@ init();
 //CAPA: Botão de começar o jogo
 
 btnComecarJogo.addEventListener("click", function(){
+    if(inputPerguntasPersonalizadas.value){
+        [perguntas, perguntasReservas] = criarPerguntas(inputPerguntasPersonalizadas.value);
+    } else [perguntas, perguntasReservas] = [perguntasObj, perguntasReservasObj];
+
     audioInicio.play();
 
     capa.classList.toggle("escondido");

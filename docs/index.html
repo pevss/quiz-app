@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +9,34 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Titillium+Web&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="midias/icon.png">
 </head>
+
 <body>
     <section class="instrucoes">
         <div class="fechar-modal">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 2L12 12M2 12L12 2" stroke="#D4CBCB" stroke-width="4"/>
+                <path d="M2 2L12 12M2 12L12 2" stroke="#D4CBCB" stroke-width="4" />
             </svg>
         </div>
         <img src="midias/instrucoes.png">
     </section>
+
     <div class="overlay-instrucoes"></div>
+
     <section class="capa">
         <img src="midias/logo.png" width="300px">
         <div class="interacao-capa">
+            <input type="text" placeholder="Suas perguntas:" class="perguntas-personalizadas">
             <h1>Iniciar Jogo</h1>
             <i class="ph-fill ph-question abrir-modal"></i>
         </div>
     </section>
+
     <canvas style="position: absolute;" id="confetti-base"></canvas>
+
     <section class="placar">
         <div id="placar--corpo">
             <div class="player host">
@@ -64,7 +72,7 @@
                     <p><span>A. </span>Alternativa</p>
                     <div class="excluir escondido">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4"/>
+                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4" />
                         </svg>
                     </div>
                 </li>
@@ -72,7 +80,7 @@
                     <p><span>B. </span>Alternativa</p>
                     <div class="excluir escondido">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4"/>
+                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4" />
                         </svg>
                     </div>
                 </li>
@@ -80,7 +88,7 @@
                     <p><span>C. </span>Alternativa</p>
                     <div class="excluir escondido">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4"/>
+                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4" />
                         </svg>
                     </div>
                 </li>
@@ -88,10 +96,10 @@
                     <p><span>D. </span>Alternativa</p>
                     <div class="excluir escondido">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4"/>
+                            <path d="M2 2L12 12M2 12L12 2" stroke="#1D1A1A" stroke-width="4" />
                         </svg>
                     </div>
-                </li> 
+                </li>
             </ul>
         </div>
         <div class="linha"></div>
@@ -102,8 +110,12 @@
             <li id="pular">
                 <div class="pular-botao">
                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="34" viewBox="0 0 41 34" fill="none">
-                        <path d="M9.44303 10.0792L15.8387 9.97076M15.8387 9.97076L15.7303 16.3664M15.8387 9.97076L9.14492 16.6645C6.1066 19.7029 6.1066 24.629 9.14492 27.6673V27.6673C12.1832 30.7056 17.1093 30.7056 20.1477 27.6673L20.8449 26.97" stroke-width="2"/>
-                        <path d="M31.5568 23.0873L25.1612 23.1957M25.1612 23.1957L25.2696 16.8001M25.1612 23.1957L31.855 16.502C34.8933 13.4636 34.8933 8.53755 31.855 5.49923V5.49923C28.8166 2.46091 23.8905 2.46091 20.8522 5.49923L20.461 5.89039" stroke-width="2"/>
+                        <path
+                            d="M9.44303 10.0792L15.8387 9.97076M15.8387 9.97076L15.7303 16.3664M15.8387 9.97076L9.14492 16.6645C6.1066 19.7029 6.1066 24.629 9.14492 27.6673V27.6673C12.1832 30.7056 17.1093 30.7056 20.1477 27.6673L20.8449 26.97"
+                            stroke-width="2" />
+                        <path
+                            d="M31.5568 23.0873L25.1612 23.1957M25.1612 23.1957L25.2696 16.8001M25.1612 23.1957L31.855 16.502C34.8933 13.4636 34.8933 8.53755 31.855 5.49923V5.49923C28.8166 2.46091 23.8905 2.46091 20.8522 5.49923L20.461 5.89039"
+                            stroke-width="2" />
                     </svg>
                 </div>
                 <div id="pulos">
@@ -118,4 +130,5 @@
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script src="script/script.js" type="module"></script>
 </body>
+
 </html>
