@@ -46,3 +46,34 @@ Agora falando de aspectos mais técnicos, desenvolver esse jogo foi bastante des
 
   Observações: O jogo foi criado para ser jogado em uma televisão, por isso a falta de responsividade (se o jogo chamar atenção de mais pessoas prentendo fazer a interface dele ser responsiva).
   Caro recrutador, as perguntas não foram feitas por mim e também não fui eu que escolhi os efeitos sonoros, qualquer coisa estranha que você ver ou ouvir não reflete a minha personalidade kkkkkkkk.
+
+
+Atualização: Perguntas Personalizadas
+===
+
+A pedido do amigo que deu a ideia do jogo, adicionei a funcionalidade do usuário poder, por meio de uma string no menu inicial do jogo, conseguir jogar com suas próprias perguntas!
+
+Para adicionar suas perguntas, cole uma string assim no input inicial do jogo:
+
+pergunta,
+alternativa,
+alternativa,
+alternativa,
+alternativa,
+resposta,
+imagem;
+pergunta,
+alternativa,
+alternativa,
+alternativa,
+alternativa,
+resposta,
+imagem/
+perguntaReserva,
+alternativa,
+alternativa,
+alternativa,
+alternativa,
+resposta
+
+  Observações: As alternativas são base 0, ou seja, a resposta também tem que ser com base 0: Se a primeira alternativa for a resposta, resposta = 0.

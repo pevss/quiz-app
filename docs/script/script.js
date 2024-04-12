@@ -72,7 +72,7 @@ const criarPerguntas = function(str){
             alternativa1,
             alternativa2,
             alternativa3,
-            resposta,
+            resposta: +resposta,
             imagem,
         });
     };
