@@ -53,18 +53,20 @@ const bora = new Audio("midias/bora.mp3");
 
 //Declaração das variáveis iniciais
 
-let pulos, perguntaAtual, alternativasEliminadas, excluindo, perguntaReserva, placarHost, placarJogador, avancar, jogando;
+let pulos, perguntaAtual, alternativasEliminadas, excluindo, perguntaReserva, placarHost, placarJogador, avancar, jogando, perguntasPersonalizadas;
 
 //Funções gerais do código
 
 const criarPerguntas = function(str){
+    perguntasPersonalizadas = true;
+
     const perguntas = [];
     const perguntasReserva = [];
 
-    const [perguntasArr, perguntasReservaArr] = str.split("/");
+    const [perguntasArr, perguntasReservaArr] = str.split("| ");
 
     const formarObjeto = function(perguntaStr, arr){
-        const [pergunta, alternativa0, alternativa1, alternativa2, alternativa3, resposta, imagem] = perguntaStr.split(",");
+        const [pergunta, alternativa0, alternativa1, alternativa2, alternativa3, resposta, imagem] = perguntaStr.split(", ");
 
         arr.push({
             pergunta,
@@ -77,8 +79,8 @@ const criarPerguntas = function(str){
         });
     };
     
-    perguntasArr.split(";").forEach(pergunta => formarObjeto(pergunta, perguntas));
-    perguntasReservaArr.split(";").forEach(pergunta => formarObjeto(pergunta, perguntasReserva));
+    perguntasArr.split("; ").forEach(pergunta => formarObjeto(pergunta, perguntas));
+    perguntasReservaArr.split("; ").forEach(pergunta => formarObjeto(pergunta, perguntasReserva));
 
     return [perguntas, perguntasReserva];
 };
@@ -173,9 +175,13 @@ const proximaPergunta = function(){
     }
     
     //Aparecer pergunta e imagem
+    let urlImagens;
+    if(perguntasPersonalizadas) urlImagens = `url('${`${(perguntaReserva ? perguntasReservas[pulos - 1].imagem : perguntas[perguntaAtual].imagem)}`}')`;
+    else urlImagens = `url('midias/imagens-perguntas/${`${(perguntaReserva ? perguntasReservas[pulos - 1].imagem : perguntas[perguntaAtual].imagem)}`}')`
+
     setTimeout(function(){
         labelPergunta.textContent = (perguntaReserva ? perguntasReservas[pulos - 1].pergunta : perguntas[perguntaAtual].pergunta);
-        labelImagem.style.backgroundImage = `url('${`midias/imagens-perguntas/${(perguntaReserva ? perguntasReservas[pulos - 1].imagem : perguntas[perguntaAtual].imagem)}`}')`;
+        labelImagem.style.backgroundImage = urlImagens;
 
         labelImagem.style.animationName = "pergunta-aparecendo";
         labelPergunta.style.animationName = "pergunta-aparecendo";
